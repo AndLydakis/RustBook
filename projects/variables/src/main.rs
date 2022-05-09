@@ -170,6 +170,14 @@ fn main() {
         println!("{}!", number);
     }
     println!("LIFTOFF!!!");
+
+
+    let mut s = String::from("hello world");
+
+    let word = first_word(&s); // word will get the value 5
+
+    println!("{}", word);
+    s.clear(); // this empties the String, making it equal to ""
 }
 
 fn another_function(x: i32) {
@@ -182,4 +190,17 @@ fn print_labeled_measurements(value: i32, unit_label: char) {
 
 fn five() -> i32 {
     5
+}
+
+fn first_word(s: &String) -> &str {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            // return i;
+            return &s[0..i];
+        }
+    }
+
+    &s[..]
 }
