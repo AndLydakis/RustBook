@@ -40,8 +40,6 @@ fn main() {
     });
 
     // let f2 = File::open("hello2.txt").expect("Could not open hello2.txt");
-
-    // Propagating errors
 }
 
 fn read_username_from_file() -> Result<String, io::Error> {
